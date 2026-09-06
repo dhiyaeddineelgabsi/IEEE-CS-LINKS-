@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ieee-blue: #00629b;
+  --color-ieee-blue-dark: #00497a;
+  --color-cs-orange: #faa41a;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #00629b;
+  color: #ffffff;
+}
+
+.matrix-bg {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 98, 155, 0.09) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+}
