@@ -13,10 +13,10 @@ export default function App() {
         className="fixed inset-x-0 top-0 h-72 bg-gradient-to-b from-ieee-blue/10 to-transparent"
       />
 
-      <main className="relative mx-auto flex w-full max-w-xl flex-col gap-10 px-5 py-12 sm:gap-12 sm:py-16">
+      <main className="relative mx-auto flex w-full max-w-xl flex-col gap-10 px-5 py-12 sm:gap-12 sm:py-16 lg:max-w-5xl">
         <Header />
 
-        <section aria-labelledby="follow-heading" className="flex flex-col gap-4">
+        <section aria-labelledby="follow-heading" className="flex flex-col gap-4 lg:gap-5">
           <div className="flex items-center gap-3">
             <span className="h-px flex-1 bg-slate-200" />
             <h2
@@ -28,9 +28,11 @@ export default function App() {
             <span className="h-px flex-1 bg-slate-200" />
           </div>
 
-          {socialLinks.map((link) => (
-            <SocialCard key={link.platform} link={link} />
-          ))}
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
+            {socialLinks.map((link) => (
+              <SocialCard key={link.platform} link={link} />
+            ))}
+          </div>
         </section>
 
         <EventsGrid />

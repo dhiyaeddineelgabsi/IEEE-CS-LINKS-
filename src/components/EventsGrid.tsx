@@ -24,7 +24,7 @@ export default function EventsGrid() {
         <span className="h-px flex-1 bg-slate-200" />
       </div>
 
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {events.map((event) => (
           <li
             key={event.name}

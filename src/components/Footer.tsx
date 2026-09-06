@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="relative border-t border-slate-200 bg-white/70 backdrop-blur">
-      <div className="mx-auto flex max-w-xl flex-col items-center gap-4 px-5 py-9 text-center">
+      <div className="mx-auto flex max-w-xl flex-col items-center gap-4 px-5 py-9 text-center lg:max-w-5xl">
         <img
           src="/enit-branch.png"
           alt="IEEE ENIT Student Branch logo"
