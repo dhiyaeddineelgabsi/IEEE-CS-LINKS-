@@ -22,14 +22,14 @@ const resourceIcons: Record<WorkshopResource['kind'], IconType> = {
 }
 
 interface WorkshopDetailProps {
-  icon: IconType
+  image: string
   title: string
   description: string
   resources: WorkshopResource[]
 }
 
 export default function WorkshopDetail({
-  icon: Icon,
+  image,
   title,
   description,
   resources,
@@ -46,8 +46,12 @@ export default function WorkshopDetail({
 
       <div className="rounded-3xl border border-slate-200/80 bg-white p-7 shadow-[0_10px_35px_rgba(0,98,155,0.12)] sm:p-9">
         <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-ieee-blue/10 text-ieee-blue">
-            <Icon aria-hidden="true" className="h-8 w-8" />
+          <span className="block h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-slate-100">
+            <img
+              src={image}
+              alt=""
+              className="h-full w-full object-cover"
+            />
           </span>
           <div>
             <span className="inline-flex items-center rounded-full border border-cs-orange/40 bg-cs-orange/10 px-3 py-1 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-amber-700">

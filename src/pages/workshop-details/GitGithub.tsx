@@ -1,4 +1,3 @@
-import { FaGitAlt } from 'react-icons/fa'
 import WorkshopDetail, {
   type WorkshopResource,
 } from '../../components/WorkshopDetail'
@@ -21,7 +20,7 @@ const resources: WorkshopResource[] = [
 export default function GitGithub() {
   return (
     <WorkshopDetail
-      icon={FaGitAlt}
+      image="/workshops/git-github.jpeg"
       title="Workshop Git & GitHub"
       description="Apprendre à versionner son code avec Git et à collaborer sur GitHub : commits, branches, pull requests et bonnes pratiques. Retrouvez ici la présentation et le replay vidéo du workshop."
       resources={resources}

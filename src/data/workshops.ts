@@ -1,11 +1,8 @@
-import type { IconType } from 'react-icons'
-import { FaCode, FaGitAlt } from 'react-icons/fa'
-
 export interface Workshop {
   id: string
   title: string
   description: string
-  icon: IconType
+  image: string
   date?: string
 }
 
@@ -15,7 +12,7 @@ export const workshops: Workshop[] = [
     title: 'Bootcamp CP — Session 1',
     description:
       'Introduction au Competitive Programming : les bases, la méthodologie et les premiers réflexes de résolution.',
-    icon: FaCode,
+    image: '/workshops/bootcamp-session-1.png',
     date: 'Session 1',
   },
   {
@@ -23,7 +20,7 @@ export const workshops: Workshop[] = [
     title: 'Bootcamp CP — Session 2',
     description:
       'Deuxième session du bootcamp : structures de données et techniques essentielles pour les concours.',
-    icon: FaCode,
+    image: '/workshops/bootcamp-session-2.png',
     date: 'Session 2',
   },
   {
@@ -31,7 +28,7 @@ export const workshops: Workshop[] = [
     title: 'Bootcamp CP — Session 3',
     description:
       'Troisième session du bootcamp : algorithmes avancés et entraînement sur des problèmes types.',
-    icon: FaCode,
+    image: '/workshops/bootcamp-session-3.png',
     date: 'Session 3',
   },
   {
@@ -39,6 +36,6 @@ export const workshops: Workshop[] = [
     title: 'Workshop Git & GitHub',
     description:
       'Versionner son code avec Git et collaborer sur GitHub : commits, branches, pull requests et plus.',
-    icon: FaGitAlt,
+    image: '/workshops/git-github.jpeg',
   },
 ]

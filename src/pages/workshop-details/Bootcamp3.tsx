@@ -1,4 +1,3 @@
-import { FaCode } from 'react-icons/fa'
 import WorkshopDetail, {
   type WorkshopResource,
 } from '../../components/WorkshopDetail'
@@ -21,7 +20,7 @@ const resources: WorkshopResource[] = [
 export default function Bootcamp3() {
   return (
     <WorkshopDetail
-      icon={FaCode}
+      image="/workshops/bootcamp-session-3.png"
       title="Bootcamp CP — Session 3"
       description="Troisième session du bootcamp Competitive Programming : algorithmes avancés et entraînement sur des problèmes types. Retrouvez ici le support et le replay vidéo de la session."
       resources={resources}
