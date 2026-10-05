@@ -1,8 +1,17 @@
-import Header from './components/Header'
-import SocialCard from './components/SocialCard'
-import EventsGrid from './components/EventsGrid'
+import { Navigate, Route, Routes, useParams } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import { socialLinks } from './data/links'
+import ScrollToTop from './components/ScrollToTop'
+import Home from './pages/Home'
+import { formationPages } from './pages/formations'
+
+function FormationRoute() {
+  const { id } = useParams()
+  const Page = id ? formationPages[id] : undefined
+
+  if (!Page) return <Navigate to="/" replace />
+  return <Page />
+}
 
 export default function App() {
   return (
@@ -13,29 +22,15 @@ export default function App() {
         className="fixed inset-x-0 top-0 h-72 bg-gradient-to-b from-ieee-blue/10 to-transparent"
       />
 
-      <main className="relative mx-auto flex w-full max-w-xl flex-1 flex-col justify-center gap-10 px-5 py-12 sm:gap-12 sm:py-16 lg:max-w-5xl">
-        <Header />
+      <ScrollToTop />
+      <Navbar />
 
-        <section aria-labelledby="follow-heading" className="flex flex-col gap-4 lg:gap-5">
-          <div className="flex items-center gap-3">
-            <span className="h-px flex-1 bg-slate-200" />
-            <h2
-              id="follow-heading"
-              className="font-display text-sm font-bold uppercase tracking-[0.2em] text-slate-500"
-            >
-              Follow Us
-            </h2>
-            <span className="h-px flex-1 bg-slate-200" />
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
-            {socialLinks.map((link) => (
-              <SocialCard key={link.platform} link={link} />
-            ))}
-          </div>
-        </section>
-
-        <EventsGrid />
+      <main className="relative mx-auto flex w-full max-w-xl flex-1 flex-col justify-center gap-10 px-5 pb-12 pt-28 sm:gap-12 sm:pb-16 sm:pt-32 lg:max-w-5xl">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/formation/:id" element={<FormationRoute />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
       <Footer />
