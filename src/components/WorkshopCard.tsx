@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import type { Formation } from '../data/formations'
+import type { Workshop } from '../data/workshops'
 
-export default function CourseCard({ formation }: { formation: Formation }) {
-  const Icon = formation.icon
+export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
+  const Icon = workshop.icon
 
   return (
     <Link
-      to={`/formation/${formation.id}`}
+      to={`/workshop/${workshop.id}`}
       className="group flex h-full flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-ieee-blue hover:shadow-[0_12px_28px_rgba(0,98,155,0.14)]"
     >
       <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-ieee-blue/10 text-ieee-blue transition-colors duration-300 group-hover:bg-ieee-blue group-hover:text-white">
@@ -15,15 +15,15 @@ export default function CourseCard({ formation }: { formation: Formation }) {
 
       <span className="flex-1">
         <span className="block font-display font-bold text-slate-900">
-          {formation.title}
+          {workshop.title}
         </span>
-        {formation.date && (
+        {workshop.date && (
           <span className="mt-0.5 block text-xs font-medium tracking-wide text-slate-400">
-            {formation.date}
+            {workshop.date}
           </span>
         )}
         <span className="mt-2 block text-sm leading-relaxed text-slate-600">
-          {formation.description}
+          {workshop.description}
         </span>
       </span>
     </Link>

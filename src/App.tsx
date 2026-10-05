@@ -3,13 +3,14 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
-import { formationPages } from './pages/formations'
+import Workshops from './pages/Workshops'
+import { workshopPages } from './pages/workshop-details'
 
-function FormationRoute() {
+function WorkshopRoute() {
   const { id } = useParams()
-  const Page = id ? formationPages[id] : undefined
+  const Page = id ? workshopPages[id] : undefined
 
-  if (!Page) return <Navigate to="/" replace />
+  if (!Page) return <Navigate to="/workshops" replace />
   return <Page />
 }
 
@@ -28,7 +29,8 @@ export default function App() {
       <main className="relative mx-auto flex w-full max-w-xl flex-1 flex-col justify-center gap-10 px-5 pb-12 pt-28 sm:gap-12 sm:pb-16 sm:pt-32 lg:max-w-5xl">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/formation/:id" element={<FormationRoute />} />
+          <Route path="/workshops" element={<Workshops />} />
+          <Route path="/workshop/:id" element={<WorkshopRoute />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

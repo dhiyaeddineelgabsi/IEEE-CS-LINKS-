@@ -23,10 +23,10 @@ export default function Navbar() {
             Accueil
           </Link>
           <Link
-            to="/#formations"
+            to="/workshops"
             className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-ieee-blue/10 hover:text-ieee-blue"
           >
-            Formations
+            Workshops
           </Link>
         </div>
       </div>
